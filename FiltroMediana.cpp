@@ -7,8 +7,8 @@ Mat_<GRY> mediana(Mat_<GRY> a){
     for(int l=0; l<b.rows; l++)
         for(int c=0; c<b.cols; c++){ 
                  vector<int> v;
-                 for(int l2=-1; l2<=1; l2++)
-                    for(int c2=-1; c2<=1; c2++)
+                 for(int l2=-4; l2<=4; l2++)
+                    for(int c2=-4; c2<=4; c2++)
                         if(0<=l+l2 && l+l2<a.rows &&0<=c+c2 && c+c2<a.cols){
                                  v.push_back(a(l+l2,c+c2));
                         }
@@ -25,7 +25,7 @@ Mat_<GRY> mediana(Mat_<GRY> a){
                             
                             
                             int main(){ 
-                                 Mat_<GRY> a;  le(a,"ruido.png"); 
+                                 Mat_<GRY> a;  le(a,"fever-2.png"); 
                                   Mat_<GRY> b=mediana(a); 
-                                  imp(b,"mediana.png");}
+                                  imp(b,"mediana_fever_9x9.png");}
 
